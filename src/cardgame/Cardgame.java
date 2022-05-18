@@ -18,13 +18,15 @@ public class Cardgame {
         CardDeck deck1 = new CardDeck();
         //System.out.println(deck1);
         deck1.shuffleCards();
-        System.out.println(deck1);
+        //System.out.println(deck1);
         Card draw1 = deck1.drawCard();
         Card draw2 = deck1.drawCard();
         Card draw3 = deck1.drawCard();
+        Card draw4 = deck1.drawCard();
         System.out.println(draw1);
         System.out.println(draw2);
         System.out.println(draw3);
+        System.out.println(draw4);
 
     }
 
