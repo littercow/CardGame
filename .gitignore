@@ -40,3 +40,4 @@ nbdist/
 =======
 /build/
 >>>>>>> parent of 0f52b0c (ajout des fichier a ignorer pour NetBeans et JAVA)
+**/nbproject
