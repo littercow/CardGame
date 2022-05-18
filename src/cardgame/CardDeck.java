@@ -41,7 +41,7 @@ public class CardDeck {
     }
 
     public void shuffleCards() {
-        Random rnd = new Random(1);
+        Random rnd = new Random(); //to have a fixed shuffle do Random(1)
         Collections.shuffle(deckCards, rnd);
 
     }
