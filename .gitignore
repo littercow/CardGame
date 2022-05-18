@@ -1,9 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
 **/nbproject/Package-*.bash
 **/nbproject
+=======
+/build/
+>>>>>>> parent of 0f52b0c (ajout des fichier a ignorer pour NetBeans et JAVA)
 =======
 /build/
 >>>>>>> parent of 0f52b0c (ajout des fichier a ignorer pour NetBeans et JAVA)
