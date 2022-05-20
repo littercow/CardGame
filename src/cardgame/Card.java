@@ -4,12 +4,15 @@
  */
 package cardgame;
 
+import java.awt.Image;
+
 /**
  *
  * @author littercow
  */
 public class Card {
 
+    Image cardImage;
     int cardNumber;
     Color cardColor;
     static int maxCard = 13;
