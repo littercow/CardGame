@@ -5,6 +5,9 @@
 package cardgame;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -12,14 +15,18 @@ import java.awt.Image;
  */
 public class Card {
 
-    Image cardImage;
+    JLabel cardLabel;
     int cardNumber;
     Color cardColor;
     static int maxCard = 13;
+    static CardSprite cardSprite = new CardSprite();
 
     public Card(int cardNumber, Color cardColor) {
         this.cardNumber = cardNumber;
         this.cardColor = cardColor;
+        
+        BufferedImage cardImage = cardSprite.getCardImage(this.cardNumber, this.cardColor);
+        cardLabel = new JLabel(new ImageIcon(cardImage));
     }
 
     public Card() {
@@ -29,5 +36,4 @@ public class Card {
     public String toString() {
         return "Card{" + "cardNumber=" + cardNumber + ", cardColor=" + cardColor + '}';
     }
-
 }

@@ -28,8 +28,8 @@ public class CardDeck {
             }
 
         }
-        pushCard(new Joker(true));
-        pushCard(new Joker(false));
+        //pushCard(new Joker(true));
+        //pushCard(new Joker(false));
     }
 
     public void pushCard(Card cards) {
@@ -43,7 +43,10 @@ public class CardDeck {
     public void shuffleCards() {
         Random rnd = new Random(); //to have a fixed shuffle do Random(1)
         Collections.shuffle(deckCards, rnd);
-
+    }
+    
+    public int getCardCount() {
+        return deckCards.size();
     }
 
     @Override
