@@ -5,9 +5,7 @@
 package cardgame;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -44,6 +42,10 @@ public class CardDeck {
         Random rnd = new Random(); //to have a fixed shuffle do Random(1)
         Collections.shuffle(deckCards, rnd);
 
+    }
+
+    public int getCardCount() {
+        return deckCards.size();
     }
 
     @Override
