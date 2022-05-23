@@ -15,6 +15,7 @@ public class CardBoard implements ActionListener {
     JFrame frame;
     JLabel labelCardLeft, labelCardDrew;
     JLabel cardImage;
+    JLabel labelTitre;
     JButton buttonNextCard, buttonReset, buttonShuffle;
 
     CardDeck deck1 = new CardDeck();
@@ -56,14 +57,18 @@ public class CardBoard implements ActionListener {
         labelCardDrew.setFont(myFont);
         labelCardDrew.setBorder(border);
 
+        labelTitre = new JLabel("Carl and Jason");
+        labelTitre.setFont(myFont);
+        labelTitre.setBorder(border);
+
         frame = new JFrame("Draw Cards Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 500);
+        frame.setSize(800, 600);
         frame.setLayout(null);
 
         //setting panel
         panel = new JPanel();
-        panel.setBounds(50, 50, 500, 300);
+        panel.setBounds(50, 0, 500, 500);
         panel.setLayout(new GridLayout(0, 1));
 
         //add buton
@@ -83,6 +88,7 @@ public class CardBoard implements ActionListener {
         //panel add label
         //frame.add(cardImage);
         //cardImage.setBounds(0, 0, 0, 0);
+        panel.add(labelTitre);
         panel.add(labelCardLeft);
         panel.add(labelCardDrew);
         panel.add(cardImage);
