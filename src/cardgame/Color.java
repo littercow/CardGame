@@ -9,6 +9,6 @@ package cardgame;
  * @author littercow
  */
 public enum Color {
-    HEARTS, SPADES, DIAMONDS, CLUBS
+    HEART, SPADE, DIAMOND, CLUB
 
 }
