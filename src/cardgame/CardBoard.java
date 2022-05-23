@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 /**
  *
@@ -15,37 +16,45 @@ public class CardBoard implements ActionListener {
     JLabel labelCardLeft, labelCardDrew;
     JLabel cardImage;
     JButton buttonNextCard, buttonReset, buttonShuffle;
+
     CardDeck deck1 = new CardDeck();
     JPanel panel;
     Font myFont = new Font("Ink Free", Font.BOLD, 20);
-    Card card = new Card();
+    //Card card = deck1.drawCard();
 
     public CardBoard() {
         deck1.shuffleCards();
+
+        Border border = BorderFactory.createLineBorder(java.awt.Color.orange, 3);
 
         buttonNextCard = new JButton("Next Card");
         buttonNextCard.setFont(myFont);
         buttonNextCard.addActionListener(this);
         buttonNextCard.setBounds(600, 0, 150, 100);
+        buttonNextCard.setBorder(border);
 
         buttonReset = new JButton("Reset the game");
         buttonReset.setFont(myFont);
         buttonReset.addActionListener(this);
         buttonReset.setBounds(600, 150, 150, 100);
+        buttonReset.setBorder(border);
 
         buttonShuffle = new JButton("Shuffle");
         buttonShuffle.setFont(myFont);
         buttonShuffle.addActionListener(this);
         buttonShuffle.setBounds(600, 300, 150, 100);
+        buttonShuffle.setBorder(border);
 
         //buttonNextCard.setBounds(50, 50, 100, 50);
         labelCardLeft = new JLabel("card left");
         labelCardLeft.setFont(myFont);
+        labelCardLeft.setBorder(border);
 
         //cardImage =;
         //cardImage.setBounds(750, 50, 71, 96);
         labelCardDrew = new JLabel("card drew");
         labelCardDrew.setFont(myFont);
+        labelCardDrew.setBorder(border);
 
         frame = new JFrame("Draw Cards Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,9 +73,11 @@ public class CardBoard implements ActionListener {
         //frame add label
         //Card card = deck1.;
 
+        //CARL CODE POUR METTRE PICTURE
         Card card = deck1.drawCard();
-        card.cardPicture.setBounds(750, 50, 71, 96);
-        frame.add(card.cardPicture);
+        //card.cardPicture.setBounds(750, 50, 71, 96);
+        cardImage = card.cardPicture;
+        cardImage.setBorder(border);
 
         //frame.add(cardImage);
         //panel add label
@@ -74,6 +85,7 @@ public class CardBoard implements ActionListener {
         //cardImage.setBounds(0, 0, 0, 0);
         panel.add(labelCardLeft);
         panel.add(labelCardDrew);
+        panel.add(cardImage);
 
         frame.add(panel);
         frame.setVisible(true);
@@ -87,8 +99,11 @@ public class CardBoard implements ActionListener {
             Card card = deck1.drawCard();
             labelCardDrew.setText(card.toString());
             labelCardLeft.setText("card left: " + (deck1.getCardCount()));
-            //card.cardPicture.setBounds(50, 50, 71, 96);
-            //cardImage = card.cardPicture;
+            cardImage.setIcon(card.cardPicture2);
+            //cardImage.setText(card.cardPicture);
+
+            //card.cardPicture.setBounds(750, 50, 71, 96);
+            //frame.add(card.cardPicture);
         }
         if (e.getSource() == buttonReset) {
             deck1 = new CardDeck();

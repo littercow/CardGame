@@ -19,6 +19,7 @@ public class Card {
     static int maxCard = 13;
     CardSprite cardSprite = new CardSprite();
     JLabel cardPicture;
+    ImageIcon cardPicture2;
 
     public Card(int cardNumber, Color cardColor) {
         this.cardNumber = cardNumber;
@@ -26,6 +27,7 @@ public class Card {
 
         BufferedImage cardImage = cardSprite.getCardImage(this.cardNumber, this.cardColor);
         cardPicture = new JLabel(new ImageIcon(cardImage));
+        cardPicture2 = new ImageIcon(cardImage);
     }
 
     public Card() {

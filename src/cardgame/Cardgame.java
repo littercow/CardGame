@@ -29,7 +29,6 @@ public class Cardgame {
 //        System.out.println(draw4);
 
         CardBoard board = new CardBoard();
-        //MyFirstBoard();
-    }
 
+    }
 }
