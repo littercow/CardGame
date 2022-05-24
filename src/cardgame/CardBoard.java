@@ -46,6 +46,7 @@ public class CardBoard {
         card = cardDeck.drawCard();
         card.cardLabel.setBounds(125, 125, 71, 96);
         frame.add(card.cardLabel);
+        //frame.setComponentZOrder(card.cardLabel, 0);
         
         frame.setVisible(true);
         
