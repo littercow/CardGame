@@ -34,7 +34,7 @@ public class CardBoard implements ActionListener {
         buttonNextCard.setBounds(600, 0, 150, 100);
         buttonNextCard.setBorder(border);
 
-        buttonReset = new JButton("Reset the game");
+        buttonReset = new JButton("<html>  Reset<br />the game</html>");
         buttonReset.setFont(myFont);
         buttonReset.addActionListener(this);
         buttonReset.setBounds(600, 150, 150, 100);

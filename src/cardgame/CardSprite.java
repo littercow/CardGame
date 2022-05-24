@@ -23,7 +23,8 @@ public class CardSprite {
 
     public CardSprite() {
         try {
-            originalImage = ImageIO.read(new File("src/ressources/cards.png"));
+            //originalImage = ImageIO.read(new File("src/ressources/cards.png"));
+            originalImage = ImageIO.read(getClass().getResource("/ressources/cards.png"));
         } catch (IOException ex) {
             Logger.getLogger(CardSprite.class.getName()).log(Level.SEVERE, null, ex);
         }
