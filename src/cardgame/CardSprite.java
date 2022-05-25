@@ -55,4 +55,14 @@ public class CardSprite {
 
     }
 
+    public BufferedImage getJoker(boolean isStrong) {
+        if (isStrong) {
+            return originalImage.getSubimage((8 - 1) * 71, 4 * 96, 71, 96);
+
+        } else {
+            return originalImage.getSubimage((8 - 1) * 71, 5 * 96, 71, 96);
+
+        }
+    }
+
 }

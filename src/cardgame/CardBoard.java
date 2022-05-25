@@ -3,6 +3,10 @@ package cardgame;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -16,6 +20,7 @@ public class CardBoard implements ActionListener {
     JLabel labelCardLeft, labelCardDrew;
     JLabel cardImage;
     JLabel labelTitre;
+
     JButton buttonNextCard, buttonReset, buttonShuffle;
 
     CardDeck deck1 = new CardDeck();
@@ -77,11 +82,12 @@ public class CardBoard implements ActionListener {
         frame.add(buttonShuffle);
         //frame add label
         //Card card = deck1.;
+        try {
+            cardImage = new JLabel(new ImageIcon(ImageIO.read(getClass().getResource("/ressources/cards.png")).getSubimage((6 - 1) * 71, 5 * 96, 71, 96)));
+        } catch (IOException ex) {
+            Logger.getLogger(CardBoard.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        //CARL CODE POUR METTRE PICTURE
-        Card card = deck1.drawCard();
-        //card.cardPicture.setBounds(750, 50, 71, 96);
-        cardImage = card.cardPicture;
         cardImage.setBorder(border);
 
         //frame.add(cardImage);
@@ -106,15 +112,20 @@ public class CardBoard implements ActionListener {
             labelCardDrew.setText(card.toString());
             labelCardLeft.setText("card left: " + (deck1.getCardCount()));
             cardImage.setIcon(card.cardPicture2);
-            //cardImage.setText(card.cardPicture);
 
-            //card.cardPicture.setBounds(750, 50, 71, 96);
-            //frame.add(card.cardPicture);
         }
         if (e.getSource() == buttonReset) {
             deck1 = new CardDeck();
+            ImageIcon cardBackImage = null;
             labelCardDrew.setText("New ordered deck");
             labelCardLeft.setText("card left: " + (deck1.getCardCount()));
+            try {
+                cardBackImage = new ImageIcon(ImageIO.read(getClass().getResource("/ressources/cards.png")).getSubimage((3 - 1) * 71, 5 * 96, 71, 96));
+            } catch (IOException ex) {
+                Logger.getLogger(CardBoard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            cardImage.setIcon(cardBackImage);
+
         }
 
         if (e.getSource() == buttonShuffle) {

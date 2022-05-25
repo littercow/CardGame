@@ -4,6 +4,10 @@
  */
 package cardgame;
 
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author littercow
@@ -12,13 +16,11 @@ public class Joker extends Card {
 
     boolean bigJoker;
 
-    public Joker(boolean bigJoker, int cardNumber, Color cardColor) {
-        super(cardNumber, cardColor);
-        this.bigJoker = bigJoker;
-    }
-
     public Joker(boolean bigJoker) {
         this.bigJoker = bigJoker;
+
+        cardPicture2 = new ImageIcon(cardSprite.getJoker(bigJoker));
+
     }
 
     @Override
